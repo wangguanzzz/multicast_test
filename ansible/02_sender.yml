@@ -2,5 +2,8 @@
 - hosts: sender
   become: true
   tasks:
+    - name: sync time
+      shell: "chronyc makestep"
+
     - name: start sender
       shell: "tmsend  -text {{ playload }} -limit {{ limit }} -P {{ speed }} -i {{ eth_ip }} "

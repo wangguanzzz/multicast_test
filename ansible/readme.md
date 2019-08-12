@@ -1,5 +1,7 @@
 image id: ami-031290b4bd9eaa715
 
+ansible-playbook release.yml --extra-vars "version=1.23.45 other_variable=foo"
+
 #n2n
 supernode -l 1200
 sudo edge -l 172.31.7.30:1200 -c Buckhill -a 192.168.1.x -E

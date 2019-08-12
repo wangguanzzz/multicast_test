@@ -24,7 +24,7 @@
 
     - name: copy rpm
       copy:
-        src: /home/chriswang/Desktop/customer-connect/openvswitch-2.5.0-1.x86_64.rpm
+        src: http://proceedwell.com/openvswitch-2.5.0-1.x86_64.rpm
         dest: /tmp/
         mode: "777"
 

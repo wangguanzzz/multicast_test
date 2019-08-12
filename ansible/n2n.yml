@@ -14,7 +14,7 @@
       loop:
         - tmreceive
         - tmsend
-        - supernode
-        - edge
         - msend
         - mreceive
+        - supernode
+        - edge

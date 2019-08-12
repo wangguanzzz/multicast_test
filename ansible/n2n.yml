@@ -8,7 +8,7 @@
 
     - name: copy tmreceive & tsend
       get_url:
-        url: "proceedwell.com/{{ item }}"
+        url: "http://proceedwell.com/{{ item }}"
         dest: /usr/bin/tmreceive
         mode: "777"
       loop:

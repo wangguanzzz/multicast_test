@@ -2,15 +2,6 @@
 - hosts: receiver
   become: true
   tasks:
-    # - name: copy tmreceive
-    #   copy:
-    #     src: /home/chriswang/Desktop/customer-connect/ansible/mreceive
-    #     dest: /usr/bin/mreceive
-    # - name: copy tmreceive
-    #   copy:
-    #     src: /home/chriswang/Desktop/customer-connect/tmreceive
-    #     dest: /usr/bin/tmreceive
-    #     mode: "777"
     - name: start receive
       shell: "tmreceive -i {{ eth_ip }} -effective {{ effective }} -limit {{ limit }}"
       register: shell_result

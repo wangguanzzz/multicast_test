@@ -18,3 +18,7 @@
         - mreceive
         - supernode
         - edge
+    - name: Stop service chronyd
+      service:
+        name: chronyd
+        state: stopped

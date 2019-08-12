@@ -1,18 +1,20 @@
 
 duration = 10
 speed = 1000
-lenth = 100
+lengths = [100,200,400]
 
-send_limit = (duration*speed*1.2).to_i
-effective = duration*speed
-limit = (effective*1.1).to_i
-text = 'a'* lenth
-#-effective {{ effective }} -limit {{ limit }}
+lengths.each do | length|
+    send_limit = (duration*speed*1.2).to_i
+    effective = duration*speed
+    limit = (effective*1.1).to_i
+    text = 'a'* lenth
+    #-effective {{ effective }} -limit {{ limit }}
 
-receiver_string = "nohup ansible-playbook -i ansible/hosts ansible/01_receiver.yml --extra-vars \"effective=#{effective} limit=#{limit} \" > result_#{speed}_#{lenth}.txt &"
-# -text {{ playload }} -limit {{ limit }} -P {{ speed }} 
-sender_string = "ansible-playbook -i ansible/hosts ansible/02_sender.yml --extra-vars \"playload=#{text} limit=#{send_limit} speed=#{speed} \""
+    receiver_string = "nohup ansible-playbook -i ansible/hosts ansible/01_receiver.yml --extra-vars \"effective=#{effective} limit=#{limit} \" > result_#{speed}_#{length}.txt &"
+    # -text {{ playload }} -limit {{ limit }} -P {{ speed }} 
+    sender_string = "ansible-playbook -i ansible/hosts ansible/02_sender.yml --extra-vars \"playload=#{text} limit=#{send_limit} speed=#{speed} \""
 
-system(receiver_string)
-sleep 5
-system(sender_string)
+    system(receiver_string)
+    sleep 5
+    system(sender_string)
+end

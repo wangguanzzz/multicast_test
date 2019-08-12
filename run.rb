@@ -7,7 +7,7 @@ lengths.each do | length|
     send_limit = (duration*speed*1.2).to_i
     effective = duration*speed
     limit = (effective*1.1).to_i
-    text = 'a'* lenth
+    text = 'a'* length
     #-effective {{ effective }} -limit {{ limit }}
 
     receiver_string = "nohup ansible-playbook -i ansible/hosts ansible/01_receiver.yml --extra-vars \"effective=#{effective} limit=#{limit} \" > result_#{speed}_#{length}.txt &"
@@ -17,4 +17,5 @@ lengths.each do | length|
     system(receiver_string)
     sleep 5
     system(sender_string)
+    
 end

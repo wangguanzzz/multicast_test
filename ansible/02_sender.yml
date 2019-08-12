@@ -1,0 +1,16 @@
+---
+- hosts: sender
+  become: true
+  tasks:
+    # - name: copy msend
+    #   copy:
+    #     src: /home/chriswang/Desktop/customer-connect/ansible/msend
+    #     dest: /usr/bin/msend
+    #     mode: "777"
+    # - name: copy tmsend
+    #   copy:
+    #     src: /home/chriswang/Desktop/customer-connect/tmsend
+    #     dest: /usr/bin/tmsend
+    #     mode: "777"
+    - name: start sender
+      shell: "tmsend  -text {{ playload }} -limit {{ limit }} -P {{ speed }} -i {{ eth_ip }} "

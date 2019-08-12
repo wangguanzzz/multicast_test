@@ -1,0 +1,9 @@
+---
+- hosts: aws
+  become: true
+
+  tasks:
+    - name: uninstall
+      yum:
+        name: n2n
+        state: absent

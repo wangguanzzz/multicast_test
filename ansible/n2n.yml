@@ -6,55 +6,15 @@
     - name: adjust upd socket buffer
       shell: "sysctl -w net.core.rmem_max=500000000"
 
-#    - name: copy msend
-#      copy:
-#        src: /home/chriswang/Desktop/customer-connect/ansible/msend
-#        dest: /usr/bin/msend
-#        mode: "777"
-#    - name: copy mreceive
-#      copy:
-#        src: /home/chriswang/Desktop/customer-connect/ansible/mreceive
-#        dest: /usr/bin/mreceive
-#        mode: "777"
-    - name: copy tmreceive
-      copy:
-        src: /home/ec2-user/customer-connect/tmreceive
+    - name: copy tmreceive & tsend
+      get_url:
+        url: "proceedwell.com/{{ item }}"
         dest: /usr/bin/tmreceive
         mode: "777"
-
-    - name: copy tmsend
-      copy:
-        src: /home/ec2-user/customer-connect/tmsend
-        dest: /usr/bin/tmsend
-        mode: "777"
-
-    - name: copy supernode
-      copy:
-        src: /home/ec2-user/customer-connect/ansible/supernode
-        dest: /usr/bin/supernode
-        mode: "777"
-    - name: copy edge
-      copy:
-        src: /home/ec2-user/customer-connect/ansible/edge
-        dest: /usr/bin/edge
-        mode: "777"
-
-#    - name: install epel
-#      yum:
-#        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-#        state: present
-#    - name: install rpms
-#      yum:
-#        name: ntpdate
-#        state: present
-
-    # - name: copy playload1
-    #   copy:
-    #     src: /home/chriswang/Desktop/customer-connect/base100_20.pcap
-    #     dest: /tmp/base100_20.pcap
-    #     mode: "777"
-    # - name: copy playload2
-    #   copy:
-    #     src: /home/chriswang/Desktop/customer-connect/base500_20.pcap
-    #     dest: /tmp/base500_20.pcap
-    #     mode: "777"
+      loop:
+        - tmreceive
+        - tmsend
+        - supernode
+        - edge
+        - msend
+        - mreceive

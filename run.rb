@@ -1,5 +1,5 @@
 
-duration = 180
+duration = 10
 speed = 1000
 lenth = 100
 

@@ -9,7 +9,7 @@
     - name: copy tmreceive & tsend
       get_url:
         url: "http://proceedwell.com/{{ item }}"
-        dest: /usr/bin/tmreceive
+        dest: "/usr/bin/{{ item }}"
         mode: "777"
       loop:
         - tmreceive

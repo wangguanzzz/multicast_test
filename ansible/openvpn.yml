@@ -78,7 +78,7 @@
         mode: "777"
 
     - name: copy client file
-      url:
+      get_url:
         src: http://proceedwell.com/{{ item.name }}
         dest: /root/openvpnclient/{{ item.name }}
       loop:

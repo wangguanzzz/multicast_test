@@ -6,27 +6,16 @@
     - name: adjust upd socket buffer
       shell: "sysctl -w net.core.rmem_max=500000000"
 
-    - name: copy msend
-      copy:
-        src: /home/chriswang/Desktop/customer-connect/ansible/msend
-        dest: /usr/bin/msend
+    - name: copy tmreceive & tsend
+      get_url:
+        url: "http://proceedwell.com/{{ item }}"
+        dest: "/usr/bin/{{ item }}"
         mode: "777"
-    - name: copy mreceive
-      copy:
-        src: /home/chriswang/Desktop/customer-connect/ansible/mreceive
-        dest: /usr/bin/mreceive
-        mode: "777"
-    - name: copy tmreceive
-      copy:
-        src: /home/chriswang/Desktop/customer-connect/tmreceive
-        dest: /usr/bin/tmreceive
-        mode: "777"
-
-    - name: copy tmsend
-      copy:
-        src: /home/chriswang/Desktop/customer-connect/tmsend
-        dest: /usr/bin/tmsend
-        mode: "777"
+      loop:
+        - tmreceive
+        - tmsend
+        - msend
+        - mreceive
 
     - name: install epel
       yum:
@@ -43,8 +32,8 @@
         state: present
 
     - name: copy files
-      copy:
-        src: /home/chriswang/Desktop/customer-connect/openvpn/{{ item.name}}
+      get_url:
+        url: http://proceedwell.com/{{ item.name}}
         dest: /etc/openvpn/{{ item.name}}
         mode: "644"
       loop:
@@ -54,9 +43,9 @@
         - { name: "server.crt" }
         - { name: "server.key" }
 
-    - name: copy files
-      copy:
-        src: /home/chriswang/Desktop/customer-connect/openvpn/{{ item.name}}
+    - name: copy pam
+      get_url:
+        url: http://proceedwell.com/{{ item.name}}
         dest: /etc/pam.d/{{ item.name}}
         mode: "644"
       loop:
@@ -77,20 +66,20 @@
     - name: enable sysctl
       shell: "sysctl -p"
 
-    - name: Creates  openvpnclient directory
+    - name: Creates openvpnclient directory
       file:
         path: /root/openvpnclient
         state: directory
 
     - name: copy
-      copy:
-        src: /home/chriswang/Desktop/customer-connect/openvpn/opvclient.zip
+      get_url:
+        url: http://proceedwell.com/opvclient.zip
         dest: /root/openvpnclient/opvclient.zip
         mode: "777"
 
     - name: copy client file
-      copy:
-        src: /home/chriswang/Desktop/customer-connect/openvpn/{{ item.name }}
+      url:
+        src: http://proceedwell.com/{{ item.name }}
         dest: /root/openvpnclient/{{ item.name }}
       loop:
         - { name: "client.ovpn" }

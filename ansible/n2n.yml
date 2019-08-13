@@ -18,7 +18,3 @@
         - mreceive
         - supernode
         - edge
-    - name: start service chronyd
-      service:
-        name: chronyd
-        state: started

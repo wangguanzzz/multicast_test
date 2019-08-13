@@ -1,5 +1,5 @@
 for arg in ARGV
-    puts arg
+    #puts arg
     File.open(arg, "r") do |f|
         expect_packages = []
         packages = []
@@ -30,7 +30,8 @@ for arg in ARGV
         max_av = max.inject(0){|sum,x| sum + x }/max.size
         min_av = min.inject(0){|sum,x| sum + x }/min.size
         aver_av = aver.inject(0){|sum,x| sum + x }/aver.size
-        puts "ploss: #{ploss} , max: #{max_av}, min: #{min_av}, aver: #{aver_av}"
+        #puts "ploss,max,min,average"
+        puts "#{arg},#{ploss},#{max_av},#{min_av},#{aver_av}"
         
       end
  end

@@ -4,7 +4,7 @@ ansible-playbook release.yml --extra-vars "version=1.23.45 other_variable=foo"
 
 #n2n
 supernode -l 1200
-sudo edge -l 172.31.2.118:1200 -c Buckhill -a 192.168.1.x -E
+sudo edge -l 172.31.36.239:1200 -c Buckhill -a 192.168.1.x -E
 
 sysctl -w net.core.rmem_max=26214400
 
@@ -25,4 +25,5 @@ openvpn --cipher none --proto udp --dev tun --auth none --prng none --mode p2p -
 when switch to upd need to comment ;explicit-exit-notify 3
 
 #openvswitch
-systemctl start openvswitch && killall dhclient && ovs-vsctl add-br OFSWITCH -- set Bridge OFSWITCH other-config:hwaddr=\$MAC && ovs-vsctl add-port OFSWITCH eth0 && ifconfig eth0 0.0.0.0 && dhclient OFSWITCH && service network restart
+#systemctl start openvswitch && killall dhclient && ovs-vsctl add-br OFSWITCH -- set Bridge OFSWITCH other-config:hwaddr=\$MAC && ovs-vsctl add-port OFSWITCH eth0 && ifconfig eth0 0.0.0.0 && dhclient OFSWITCH && service network restart
+systemctl start openvswitch && killall dhclient && ovs-vsctl add-br OFSWITCH -- set Bridge OFSWITCH other-config:hwaddr=\$MAC && ovs-vsctl add-port OFSWITCH eth0 && ifconfig eth0 0 up && dhclient OFSWITCH && service network restart

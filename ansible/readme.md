@@ -21,6 +21,7 @@ openvpn --cipher none --proto udp --dev tun --auth none --prng none --mode p2p -
 openvpn --cipher none --proto udp --dev tun --auth none --prng none --mode p2p --ifconfig 192.168.1.2 192.168.1.3 192.168.1.4 192.168.1.5 192.168.1.6 192.168.1.7 --remote 172.31.29.76 1194
 
 #openvpn
+#server systemctl start openvpn@server.service
 when switch to upd need to comment ;explicit-exit-notify 3
 
 #openvswitch

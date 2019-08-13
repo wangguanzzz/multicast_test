@@ -4,7 +4,7 @@ ansible-playbook release.yml --extra-vars "version=1.23.45 other_variable=foo"
 
 #n2n
 supernode -l 1200
-sudo edge -l 172.31.25.125:1200 -c Buckhill -a 192.168.1.x -E
+sudo edge -l 172.31.2.118:1200 -c Buckhill -a 192.168.1.x -E
 
 sysctl -w net.core.rmem_max=26214400
 

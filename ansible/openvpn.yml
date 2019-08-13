@@ -79,7 +79,7 @@
 
     - name: copy client file
       get_url:
-        src: http://proceedwell.com/{{ item.name }}
+        url: http://proceedwell.com/{{ item.name }}
         dest: /root/openvpnclient/{{ item.name }}
       loop:
         - { name: "client.ovpn" }

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+systemctl start openvswitch && killall dhclient && ovs-vsctl add-br OFSWITCH -- set Bridge OFSWITCH other-config:hwaddr={{ ansible_default_ipv4.macaddress }} && ovs-vsctl add-port OFSWITCH eth0 && ifconfig eth0 0.0.0.0 && dhclient OFSWITCH && service network restart
+ifconfig eth0 0 up
+ovs-vsctl add-br br1

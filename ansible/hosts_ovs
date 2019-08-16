@@ -1,12 +1,12 @@
 [all:vars]
-ansible_ssh_private_key_file=/home/chriswang/newlaptop.pem
+ansible_ssh_private_key_file=/home/chriswang/Downloads/chris_key.pem
 ansible_ssh_user=ec2-user
 
 
 
 [aws]
-test1
-test2
+#t7
+t8
 
 
 [sender]

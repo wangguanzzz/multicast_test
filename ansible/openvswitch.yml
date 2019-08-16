@@ -3,15 +3,24 @@
   become: true
 
   tasks:
-    - name: upgrade all packages, excluding kernel & foo related packages
+    - name: install packages
       yum:
-        name: "*"
-        state: latest
-
-    - name: install psmisc
-      yum:
-        name: psmisc
+        name:
+          - psmisc
+          - https://s3-ap-southeast-1.amazonaws.com/proceedwell.com/openvswitch-2.5.0-1.x86_64.rpm
         state: present
 
     - name: adjust upd socket buffer
       shell: "sysctl -w net.core.rmem_max=500000000"
+
+    #    - name: show mac
+    #      debug: var=ansible_default_ipv4.macaddress
+
+    - name: Template  ovs script
+      template:
+        src: templates/ovs.j2
+        dest: /tmp/ovs.sh
+        mode: "777"
+
+    - name: shell run
+      shell: "/tmp/ovs.sh"

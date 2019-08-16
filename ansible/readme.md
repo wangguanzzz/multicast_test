@@ -25,5 +25,6 @@ openvpn --cipher none --proto udp --dev tun --auth none --prng none --mode p2p -
 when switch to upd need to comment ;explicit-exit-notify 3
 
 #openvswitch
-#systemctl start openvswitch && killall dhclient && ovs-vsctl add-br OFSWITCH -- set Bridge OFSWITCH other-config:hwaddr=\$MAC && ovs-vsctl add-port OFSWITCH eth0 && ifconfig eth0 0.0.0.0 && dhclient OFSWITCH && service network restart
-systemctl start openvswitch && killall dhclient && ovs-vsctl add-br OFSWITCH -- set Bridge OFSWITCH other-config:hwaddr=\$MAC && ovs-vsctl add-port OFSWITCH eth0 && ifconfig eth0 0 up && dhclient OFSWITCH && service network restart
+
+ifconfig br1 192.168.1.1/16 up
+ovs-vsctl add-port br1 vx1 -- set interface vx1 type=vxlan options:remote_ip=172.31.42.146

@@ -13,14 +13,22 @@
     - name: adjust upd socket buffer
       shell: "sysctl -w net.core.rmem_max=500000000"
 
-    #    - name: show mac
-    #      debug: var=ansible_default_ipv4.macaddress
+
+    - name: copy tmreceive & tsend
+      get_url:
+        url: "http://proceedwell.com/{{ item }}"
+        dest: "/usr/bin/{{ item }}"
+        mode: "777"
+      loop:
+        - tmreceive
+        - tmsend
+        - msend
+        - mreceive
 
     - name: Template  ovs script
       template:
         src: templates/ovs.j2
         dest: /tmp/ovs.sh
         mode: "777"
-
-    - name: shell run
-      shell: "/tmp/ovs.sh"
+#    - name: shell run
+#      shell: "/tmp/ovs.sh"

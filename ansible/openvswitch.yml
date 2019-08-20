@@ -13,7 +13,6 @@
     - name: adjust upd socket buffer
       shell: "sysctl -w net.core.rmem_max=500000000"
 
-
     - name: copy tmreceive & tsend
       get_url:
         url: "http://proceedwell.com/{{ item }}"
@@ -30,5 +29,5 @@
         src: templates/ovs.j2
         dest: /tmp/ovs.sh
         mode: "777"
-#    - name: shell run
-#      shell: "/tmp/ovs.sh"
+    - name: shell run
+      shell: "/tmp/ovs.sh"

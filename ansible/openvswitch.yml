@@ -7,7 +7,7 @@
       yum:
         name:
           - psmisc
-          - https://s3-ap-southeast-1.amazonaws.com/proceedwell.com/openvswitch-2.5.0-1.x86_64.rpm
+          - https://s3-ap-southeast-1.amazonaws.com/proceedwell.com/openvswitch-2.8.2-1.el7.x86_64.rpm
         state: present
 
     - name: adjust upd socket buffer

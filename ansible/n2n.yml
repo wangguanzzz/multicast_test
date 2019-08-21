@@ -4,7 +4,16 @@
 
   tasks:
     - name: adjust upd socket buffer
-      shell: "sysctl -w net.core.rmem_max=500000000"
+      shell: { { item } }
+      loop:
+        - "sysctl -w net.core.rmem_default=31457280"
+        - "sysctl -w net.core.rmem_max=33554432"
+        - "sysctl -w net.core.wmem_default=31457280"
+        - "sysctl -w net.core.wmem_max=33554432"
+        - "sysctl -w net.core.somaxconn=65535"
+        - "sysctl -w net.core.netdev_max_backlog=65536"
+        - "sysctl -w net.ipv4.udp_mem=65536 131072 262144"
+        - "sysctl -p"
 
     - name: copy tmreceive & tsend
       get_url:

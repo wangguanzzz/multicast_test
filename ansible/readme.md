@@ -49,3 +49,8 @@ socat -d -d -d -d - udp-datagram:224.1.1.1:4444,bind=:4444,ip-add-membership=192
 4 tar xfz openvswitch-2.5.0.tar.gz
 5 sed 's/openvswitch-kmod, //g' openvswitch-2.5.0/rhel/openvswitch.spec > openvswitch-2.5.0/rhel/openvswitch_no_kmod.spec
 6 rpmbuild -bb --nocheck ~/openvswitch-2.5.0/rhel/openvswitch_no_kmod.spec
+
+sudo ifconfig br1 192.168.1.1/16 up
+sudo ovs-vsctl add-port br1 vx1 -- set interface vx1 type=gre options:remote_ip=172.31.33.102
+
+wget http://vault.centos.org/centos/7.6.1810/os/Source/SPackages/omping-0.0.4-6.el7.src.rpm

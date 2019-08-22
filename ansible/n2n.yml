@@ -33,8 +33,9 @@
 
   tasks:
     - name: start n2n master
-      shell: "sudo nohup supernode -l 1200 &"
-
+      shell: "supernode -l 1200"
+      async: 2592000
+      poll: 0
 - hosts: sender
   become: true
 

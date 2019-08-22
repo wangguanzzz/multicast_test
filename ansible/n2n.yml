@@ -33,7 +33,7 @@
 
   tasks:
     - name: start n2n master
-      shell: "nohup supernode -l 1200 &"
+      shell: "sudo nohup supernode -l 1200 &"
 
 - hosts: sender
   become: true

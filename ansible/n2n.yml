@@ -13,6 +13,13 @@
         - "sysctl -w net.core.somaxconn=65535"
         - "sysctl -w net.core.netdev_max_backlog=65536"
         - "sysctl -w net.ipv4.udp_mem=65536131072262144"
+        - "sysctl -w net.core.optmem_max=25165824"
+        - "sysctl -w net.ipv4.tcp_mem=786432104857626777216"
+        - "sysctl -w net.ipv4.udp_mem=65536131072262144"
+        - "sysctl -w net.ipv4.tcp_rmem=81928738033554432"
+        - "sysctl -w net.ipv4.udp_rmem_min=16384"
+        - "sysctl -w net.ipv4.tcp_wmem=81926553633554432"
+        - "sysctl -w net.ipv4.udp_wmem_min=16384"
         - "sysctl -p"
 
     - name: copy tmreceive & tsend
@@ -41,11 +48,11 @@
 
   tasks:
     - name: start n2n edge
-      shell: "sudo edge -l {{ n2n_master }}:1200 -c Buckhill -a {{ eth_ip }} -E"
+      shell: "edge -l {{ n2n_master }}:1200 -c Buckhill -a {{ eth_ip }} -E"
 
 - hosts: receiver
   become: true
 
   tasks:
     - name: start n2n edge
-      shell: "sudo edge -l {{ n2n_master }}:1200 -c Buckhill -a {{ eth_ip }} -E"
+      shell: "edge -l {{ n2n_master }}:1200 -c Buckhill -a {{ eth_ip }} -E"

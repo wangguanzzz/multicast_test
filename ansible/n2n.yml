@@ -40,11 +40,11 @@
 
   tasks:
     - name: start n2n edge
-      shell: "sudo edge -l {{ n2n-master }}:1200 -c Buckhill -a {{ eth_ip }} -E"
+      shell: "sudo edge -l {{ n2n_master }}:1200 -c Buckhill -a {{ eth_ip }} -E"
 
 - hosts: receiver
   become: true
 
   tasks:
     - name: start n2n edge
-      shell: "sudo edge -l {{ n2n-master }}:1200 -c Buckhill -a {{ eth_ip }} -E"
+      shell: "sudo edge -l {{ n2n_master }}:1200 -c Buckhill -a {{ eth_ip }} -E"

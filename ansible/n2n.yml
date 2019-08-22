@@ -27,3 +27,24 @@
         - mreceive
         - supernode
         - edge
+
+- hosts: master
+  become: true
+
+  tasks:
+    - name: start n2n master
+      shell: "nohup supernode -l 1200 &"
+
+- hosts: sender
+  become: true
+
+  tasks:
+    - name: start n2n edge
+      shell: "sudo edge -l {{ n2n-master }}:1200 -c Buckhill -a {{ eth_ip }} -E"
+
+- hosts: receiver
+  become: true
+
+  tasks:
+    - name: start n2n edge
+      shell: "sudo edge -l {{ n2n-master }}:1200 -c Buckhill -a {{ eth_ip }} -E"

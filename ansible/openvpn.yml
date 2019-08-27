@@ -60,12 +60,6 @@
       loop:
         - { name: "openvpn" }
 
-    # - name: Enable password login
-    #   lineinfile:
-    #     path: /etc/ssh/sshd_config
-    #     regexp: "^PasswordAuthentication"
-    #     line: PasswordAuthentication yes
-
     - name: Ensure ipforward
       lineinfile:
         path: /etc/sysctl.conf
@@ -97,3 +91,8 @@
 
     - name: unzip
       shell: "cd /root/openvpnclient && unzip opvclient.zip"
+    # - name: Enable password login
+    #   lineinfile:
+    #     path: /etc/ssh/sshd_config
+    #     regexp: "^PasswordAuthentication"
+    #     line: PasswordAuthentication yes

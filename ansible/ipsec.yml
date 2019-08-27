@@ -1,0 +1,31 @@
+---
+- hosts: aws
+  become: true
+
+  tasks:
+    - name: install epel
+      yum:
+        name:
+          - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        state: present
+
+    - name: install rpms
+      yum:
+        name:
+          - strongswan
+          - xl2tpd
+        state: present
+
+    - command: "{{ item }}"
+      loop:
+        - echo "net.ipv4.ip_forward = 1" |  tee -a /etc/sysctl.conf
+        - echo "net.ipv4.conf.all.accept_redirects = 0" |  tee -a /etc/sysctl.conf
+        - echo "net.ipv4.conf.all.send_redirects = 0" |  tee -a /etc/sysctl.conf
+        - sysctl -p
+
+    - template:
+        src: templates/l2tp.j2
+        dest: /tmp/l2tp.sh
+        mode: "777"
+
+    - shell: "/tmp/l2tp.sh"

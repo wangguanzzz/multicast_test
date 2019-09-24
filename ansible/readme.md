@@ -22,6 +22,9 @@ openvpn --cipher none --proto udp --dev tun --auth none --prng none --mode p2p -
 #openvpn
 #server systemctl start openvpn@server.service
 when switch to upd need to comment ;explicit-exit-notify 3
+systemctl start openvpn@server
+for multiple instance need to run in command line:
+openvpn --config /etc/openvpn/server.conf
 
 #openvswitch
 

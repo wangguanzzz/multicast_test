@@ -1,7 +1,7 @@
 
 duration = 180
-speeds = [16000,18000,20000,22000,24000]
-lengths = [100,200,400]
+speeds = [38000]
+lengths = [200]
 speeds.each do | speed|
 lengths.each do | length|
     send_limit = (duration*speed*1.2).to_i

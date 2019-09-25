@@ -28,8 +28,10 @@ openvpn --config /etc/openvpn/server.conf
 
 #openvswitch
 
-ifconfig br1 192.168.1.1/16 up
-ovs-vsctl add-port br1 vx1 -- set interface vx1 type=vxlan options:remote_ip=172.31.3.141
+sudo ifconfig br1 192.168.1.1/16 up
+sudo ovs-vsctl add-port br1 vx1 -- set interface vx1 type=vxlan options:remote_ip=172.31.19.231
+
+
 ovs-vsctl set Bridge br1 mcast_snooping_enable=true
 
 ovs-vsctl set Bridge br1 other_config:mcast-snooping-disable-flood-unregistered=true

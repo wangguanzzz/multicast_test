@@ -38,6 +38,8 @@
           - zip
           - unzip
           - ntpdate
+          - vim
+          - psmisc
         state: present
 
     - name: copy files

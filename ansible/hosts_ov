@@ -4,12 +4,20 @@ ansible_ssh_user=ec2-user
 
 [aws]
 op-master
-
+op1
+op2
+op3
+op4
+op5
+op6
+op7
+op8
 
 [sender]
-op1  eth_ip=10.8.0.6  
+op-master eth_ip=10.8.0.1
 
 [receiver]
+op1  eth_ip=10.8.0.6
 op2  eth_ip=10.8.0.10
 op3  eth_ip=10.8.0.14 
 op4  eth_ip=10.8.0.18
@@ -17,4 +25,4 @@ op5  eth_ip=10.8.0.22
 op6  eth_ip=10.8.0.26
 op7  eth_ip=10.8.0.30
 op8  eth_ip=10.8.0.34
-op9  eth_ip=10.8.0.38
+

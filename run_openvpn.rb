@@ -1,6 +1,6 @@
 
 duration = 180
-speeds = [38000]
+speeds = [10000]
 lengths = [200]
 speeds.each do | speed|
 lengths.each do | length|
@@ -15,7 +15,7 @@ lengths.each do | length|
     sender_string = "ansible-playbook -i ansible/hosts_ov ansible/02_sender.yml --extra-vars \"playload=#{text} limit=#{send_limit} speed=#{speed} \""
 
     system(receiver_string)
-    sleep 5
+    sleep 20
     system(sender_string)
     sleep 5
 end

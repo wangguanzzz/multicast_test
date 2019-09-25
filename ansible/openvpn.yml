@@ -93,6 +93,12 @@
 
     - name: unzip
       shell: "cd /root/openvpnclient && unzip opvclient.zip"
+
+    - name: Template client setting
+      template:
+        src: templates/openvpn_client.j2
+        dest: /root/openvpnclient/client.ovpn
+        mode: "777"
     # - name: Enable password login
     #   lineinfile:
     #     path: /etc/ssh/sshd_config

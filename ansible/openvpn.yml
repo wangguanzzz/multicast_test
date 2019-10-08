@@ -83,6 +83,8 @@
         path: /root/openvpnclient
         state: directory
 
+  
+
     # - name: copy
     #   get_url:
     #     url: http://proceedwell.com/opvclient.zip
@@ -97,9 +99,9 @@
         # - { name: "client.ovpn" }
         - { name: "login.conf" }
         - { name: "ca.crt" }
-        - { name: "opvclient1.crt" }
-        - { name: "opvclient1.csr" }
-        - { name: "opvclient1.key" }
+        - { name: "opvclient.crt" }
+        - { name: "opvclient.csr" }
+        - { name: "opvclient.key" }
 
     - name: Template openvpn client setting
       template:
@@ -114,3 +116,4 @@
     #     dest: /root/openvpnclient/client.ovpn
     #     mode: "777"
 
+    

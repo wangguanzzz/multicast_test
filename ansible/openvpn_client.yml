@@ -1,0 +1,7 @@
+---
+- hosts: aws
+  become: true
+
+  tasks:
+    - name: run client
+      shell: "nohup openvpn client.ovpn &"

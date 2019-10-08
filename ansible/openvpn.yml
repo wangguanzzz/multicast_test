@@ -85,7 +85,8 @@
     - name: copy client file
       get_url:
         url: http://proceedwell.com/{{ item.name }}
-        dest: /root/openvpnclient/{{ item.name }}
+        dest: /home/ec2-user/{{ item.name }}
+        #dest: /root/openvpnclient/{{ item.name }}
       loop:
         - { name: "login.conf" }
         - { name: "ca.crt" }

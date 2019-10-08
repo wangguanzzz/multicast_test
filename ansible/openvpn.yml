@@ -43,10 +43,10 @@
           - bridge-utils
         state: present
     - name: Enable password login
-    lineinfile:
-      path: /etc/ssh/sshd_config
-      regexp: "^PasswordAuthentication"
-      line: PasswordAuthentication yes
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^PasswordAuthentication"
+        line: PasswordAuthentication yes
       
 
     - name: copy files

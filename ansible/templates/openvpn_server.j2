@@ -29,7 +29,7 @@ local {{ vpnmaster }}
 # on the same machine, use a different port
 # number for each one.  You will need to
 # open up this port on your firewall.
-port 1194
+port {{ vpnport }}
 
 # TCP or UDP server?
 proto tcp

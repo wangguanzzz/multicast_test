@@ -31,7 +31,6 @@ openvpn --config /etc/openvpn/server.conf
 sudo ifconfig br1 192.168.1.1/16 up
 sudo ovs-vsctl add-port br1 vx1 -- set interface vx1 type=vxlan options:remote_ip=172.31.19.231
 
-
 ovs-vsctl set Bridge br1 mcast_snooping_enable=true
 
 ovs-vsctl set Bridge br1 other_config:mcast-snooping-disable-flood-unregistered=true
@@ -58,3 +57,9 @@ sudo ifconfig br1 192.168.1.1/16 up
 sudo ovs-vsctl add-port br1 vx1 -- set interface vx1 type=gre options:remote_ip=172.31.33.102
 
 wget http://vault.centos.org/centos/7.6.1810/os/Source/SPackages/omping-0.0.4-6.el7.src.rpm
+
+#eth
+
+IPADDR=192.168.1.2
+NETMASK=255.255.255.0
+BROADCAST=192.168.1.255

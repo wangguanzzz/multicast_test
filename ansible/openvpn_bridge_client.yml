@@ -3,6 +3,9 @@
   become: true
 
   tasks:
+    - name: killall openvpn
+      shell: "killall openvpn"
+
     - set_fact:
         vpnport: 1200
 

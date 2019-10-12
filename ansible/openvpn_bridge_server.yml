@@ -1,0 +1,10 @@
+---
+- hosts: aws_server
+  become: true
+
+  tasks:
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /home/ec2-user/server.ovpn
+        mode: "777"

@@ -86,7 +86,6 @@
       get_url:
         url: http://proceedwell.com/{{ item.name }}
         dest: /home/ec2-user/{{ item.name }}
-        #dest: /root/openvpnclient/{{ item.name }}
       loop:
         - { name: "login.conf" }
         - { name: "ca.crt" }
@@ -94,12 +93,11 @@
         - { name: "opvclient.csr" }
         - { name: "opvclient.key" }
 
-    - name: Template openvpn client setting
-      template:
-        src: templates/openvpn_client.j2
-        #dest: /root/openvpnclient/client.ovpn
-        dest: /home/ec2-user/client.ovpn
-        mode: "777"
+    # - name: Template openvpn client setting
+    #   template:
+    #     src: templates/openvpn_client.j2
+    #     dest: /home/ec2-user/client.ovpn
+    #     mode: "777"
 
     - name: Template openvpn server setting
       template:

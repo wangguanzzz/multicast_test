@@ -9,8 +9,8 @@
         dest: /opt/bridge_start.sh
         mode: "777"
 
-    # - name: run bridge start
-    #   shell: "/opt/bridge_start.sh"
+    - name: run bridge start
+      shell: "/opt/bridge_start.sh"
 
     #tap0
     - set_fact:
@@ -213,6 +213,7 @@
 
     - name: kill all openvpn
       shell: "killall openvpn"
+      ignore_errors: yes
     #run openvpn server
     - name: run openvpn server
       shell: "openvpn --config {{ item }}.conf --daemon"

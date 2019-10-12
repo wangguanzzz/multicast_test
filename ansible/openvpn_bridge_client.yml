@@ -4,7 +4,7 @@
 
   tasks:
     - set_fact:
-      vpnport: 1200
+        vpnport: 1200
 
     - name: Template openvpn client setting
       template:
@@ -14,4 +14,5 @@
 
     - name: run client
       shell: "nohup openvpn client.ovpn &"
+
     - debug: var=ansible_all_ipv4_addresses

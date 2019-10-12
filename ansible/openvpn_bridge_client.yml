@@ -19,5 +19,8 @@
       shell: "nohup openvpn client.ovpn &"
 
     - pause:
-        seconds: 15
-    - debug: var=ansible_all_ipv4_addresses
+        seconds: 10
+    - shell: "ifconfig | grep 192.168"
+      register: ps
+
+    - debug: var=ps.stdout_lines

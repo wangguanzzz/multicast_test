@@ -214,4 +214,5 @@
     #run openvpn server
     - name: run openvpn server
       shell: "openvpn --config server0.conf --daemon"
+      args:
         chdir: /etc/openvpn

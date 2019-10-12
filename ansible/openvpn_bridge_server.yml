@@ -9,5 +9,16 @@
         dest: /opt/bridge_start.sh
         mode: "777"
 
-    - name: run bridge start
-      shell: "/opt/bridge_start.sh"
+    # - name: run bridge start
+    #   shell: "/opt/bridge_start.sh"
+
+    - set_fact:
+        vpnport: 1200
+        tap: tap0
+        ip_start: 192.168.1.3
+        ip_end: 192.168.1.5
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server0.conf

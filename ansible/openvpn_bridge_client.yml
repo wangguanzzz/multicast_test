@@ -18,4 +18,6 @@
     - name: run client
       shell: "nohup openvpn client.ovpn &"
 
+    - pause:
+        seconds: 15
     - debug: var=ansible_all_ipv4_addresses

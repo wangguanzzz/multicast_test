@@ -1,0 +1,13 @@
+client
+dev tap
+proto tcp
+remote {{ vpnmaster }} {{ vpnport }}
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+verb 3
+ca ca.crt
+cert opvclient.crt
+key opvclient.key
+auth-user-pass login.conf

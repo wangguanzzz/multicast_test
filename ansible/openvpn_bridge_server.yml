@@ -211,8 +211,29 @@
         src: templates/openvpn_bridge_server.j2
         dest: /etc/openvpn/server17.conf
 
+    - name: kill all openvpn
+      shell: "killall openvpn"
     #run openvpn server
     - name: run openvpn server
-      shell: "openvpn --config server0.conf --daemon"
+      shell: "openvpn --config {{ item }}.conf --daemon"
       args:
         chdir: /etc/openvpn
+      loop:
+        - server0
+        - server1
+        - server2
+        - server3
+        - server4
+        - server5
+        - server6
+        - server7
+        - server8
+        - server9
+        - server10
+        - server11
+        - server12
+        - server13
+        - server14
+        - server15
+        - server16
+        - server17

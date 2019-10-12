@@ -12,6 +12,7 @@
     # - name: run bridge start
     #   shell: "/opt/bridge_start.sh"
 
+    #tap0
     - set_fact:
         vpnport: 1200
         tap: tap0
@@ -22,3 +23,195 @@
       template:
         src: templates/openvpn_bridge_server.j2
         dest: /etc/openvpn/server0.conf
+    #tap1
+    - set_fact:
+        vpnport: 1201
+        tap: tap1
+        ip_start: 192.168.1.10
+        ip_end: 192.168.1.14
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server1.conf
+    #tap2
+    - set_fact:
+        vpnport: 1202
+        tap: tap2
+        ip_start: 192.168.1.15
+        ip_end: 192.168.1.19
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server2.conf
+    #tap3
+    - set_fact:
+        vpnport: 1203
+        tap: tap3
+        ip_start: 192.168.1.20
+        ip_end: 192.168.1.24
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server3.conf
+    #tap4
+    - set_fact:
+        vpnport: 1204
+        tap: tap4
+        ip_start: 192.168.1.25
+        ip_end: 192.168.1.29
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server4.conf
+    #tap5
+    - set_fact:
+        vpnport: 1205
+        tap: tap5
+        ip_start: 192.168.1.30
+        ip_end: 192.168.1.34
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server5.conf
+    #tap6
+    - set_fact:
+        vpnport: 1206
+        tap: tap6
+        ip_start: 192.168.1.35
+        ip_end: 192.168.1.39
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server6.conf
+    #tap7
+    - set_fact:
+        vpnport: 1207
+        tap: tap7
+        ip_start: 192.168.1.40
+        ip_end: 192.168.1.44
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server7.conf
+    #tap8
+    - set_fact:
+        vpnport: 1208
+        tap: tap8
+        ip_start: 192.168.1.45
+        ip_end: 192.168.1.49
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server8.conf
+    #tap9
+    - set_fact:
+        vpnport: 1209
+        tap: tap9
+        ip_start: 192.168.1.50
+        ip_end: 192.168.1.54
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server9.conf
+    #tap10
+    - set_fact:
+        vpnport: 1210
+        tap: tap10
+        ip_start: 192.168.1.55
+        ip_end: 192.168.1.59
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server10.conf
+    #tap11
+    - set_fact:
+        vpnport: 1211
+        tap: tap11
+        ip_start: 192.168.1.60
+        ip_end: 192.168.1.64
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server11.conf
+    #tap12
+    - set_fact:
+        vpnport: 1212
+        tap: tap12
+        ip_start: 192.168.1.65
+        ip_end: 192.168.1.69
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server12.conf
+    #tap13
+    - set_fact:
+        vpnport: 1213
+        tap: tap13
+        ip_start: 192.168.1.70
+        ip_end: 192.168.1.74
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server13.conf
+    #tap14
+    - set_fact:
+        vpnport: 1214
+        tap: tap14
+        ip_start: 192.168.1.75
+        ip_end: 192.168.1.79
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server14.conf
+    #tap15
+    - set_fact:
+        vpnport: 1215
+        tap: tap15
+        ip_start: 192.168.1.80
+        ip_end: 192.168.1.84
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server15.conf
+    #tap16
+    - set_fact:
+        vpnport: 1216
+        tap: tap16
+        ip_start: 192.168.1.85
+        ip_end: 192.168.1.89
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server16.conf
+    #tap17
+    - set_fact:
+        vpnport: 1217
+        tap: tap17
+        ip_start: 192.168.1.90
+        ip_end: 192.168.1.94
+
+    - name: Template openvpn server setting
+      template:
+        src: templates/openvpn_bridge_server.j2
+        dest: /etc/openvpn/server17.conf
+
+    #run openvpn server
+    - name: run openvpn server
+      shell: "openvpn --config server0.conf --daemon"
+        chdir: /etc/openvpn

@@ -5,6 +5,9 @@
   tasks:
     - name: Template openvpn server setting
       template:
-        src: templates/openvpn_bridge_server.j2
-        dest: /home/ec2-user/server.ovpn
+        src: templates/bridge_start.sh
+        dest: /opt/bridge_start.sh
         mode: "777"
+
+    - name: run bridge start
+      shell: "/opt/bridge_start.sh"

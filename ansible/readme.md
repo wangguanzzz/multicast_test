@@ -63,3 +63,7 @@ wget http://vault.centos.org/centos/7.6.1810/os/Source/SPackages/omping-0.0.4-6.
 IPADDR=192.168.1.2
 NETMASK=255.255.255.0
 BROADCAST=192.168.1.255
+
+# ignore key checking
+
+export ANSIBLE_HOST_KEY_CHECKING=False

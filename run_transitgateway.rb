@@ -1,6 +1,6 @@
 
 duration = 180
-speeds = [16000,18000,20000,22000,24000]
+speeds = [16000,18000,20000,24000,28000]
 lengths = [200]
 speeds.each do | speed|
 lengths.each do | length|

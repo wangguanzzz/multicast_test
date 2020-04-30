@@ -1,0 +1,15 @@
+---
+- hosts: aws
+  become: true
+
+  tasks:
+    - name: copy tmreceive & tsend
+      get_url:
+        url: "http://proceedwell.com/{{ item }}"
+        dest: "/usr/bin/{{ item }}"
+        mode: "777"
+      loop:
+        - tmreceive
+        - tmsend
+        - msend
+        - mreceive

@@ -2,8 +2,8 @@
 - hosts: receiver
   become: true
   tasks:
-    - name: sync time
-      shell: "chronyc makestep"
+    # - name: sync time
+    #   shell: "chronyc makestep"
 
     - name: start receive
       shell: "tmreceive -i {{ eth_ip }} -effective {{ effective }} -limit {{ limit }}"

@@ -14,8 +14,8 @@
         - "sysctl -w net.core.netdev_max_backlog=65536"
         - "sysctl -w net.ipv4.udp_mem=65536131072262144"
         - "sysctl -p"
-    - name: sync time
-      shell: "sudo ntpdate -qu 1.ro.pool.ntp.org"
+    # - name: sync time
+    #   shell: "sudo ntpdate -qu 1.ro.pool.ntp.org"
 
     - name: copy tmreceive & tsend
       get_url:

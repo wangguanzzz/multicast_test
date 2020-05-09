@@ -6,7 +6,7 @@
     #   shell: "sudo chronyc makestep"
 
     - name: start receive
-      shell: "tmreceive -i {{ eth_ip }} -effective {{ effective }} -limit {{ limit }}"
+      shell: "tmreceive -i {{ eth_ip }} -effective {{ effective }} -limit {{ limit }} -g {{ group }}"
       register: shell_result
 
     - name: output receive result

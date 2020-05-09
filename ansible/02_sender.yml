@@ -6,4 +6,4 @@
     #   shell: "sudo chronyc makestep"
 
     - name: start sender
-      shell: "tmsend  -text {{ playload }} -limit {{ limit }} -P {{ speed }} -i {{ eth_ip }} "
+      shell: "tmsend  -text {{ playload }} -limit {{ limit }} -P {{ speed }} -i {{ eth_ip }} -g {{group}} "

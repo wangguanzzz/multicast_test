@@ -10,9 +10,9 @@ lengths.each do | length|
     text = 'a'* length
     #-effective {{ effective }} -limit {{ limit }}
 
-    receiver_string = "nohup ansible-playbook -i ansible/hosts_transitgateway ansible/01_receiver.yml --extra-vars \"effective=#{effective} limit=#{limit} \" > result_#{speed}_#{length}.txt &"
+    receiver_string = "nohup ansible-playbook -i ansible/hosts_transitgateway ansible/01_receiver.yml --extra-vars \"effective=#{effective} limit=#{limit} group=224.1.1.1 \" > result_#{speed}_#{length}.txt &"
     # -text {{ playload }} -limit {{ limit }} -P {{ speed }} 
-    sender_string = "ansible-playbook -i ansible/hosts_transitgateway ansible/02_sender.yml --extra-vars \"playload=#{text} limit=#{send_limit} speed=#{speed} \""
+    sender_string = "ansible-playbook -i ansible/hosts_transitgateway ansible/02_sender.yml --extra-vars \"playload=#{text} limit=#{send_limit} speed=#{speed} group=224.1.1.1 \""
 
     system(receiver_string)
     sleep 5

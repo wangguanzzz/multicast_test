@@ -9,6 +9,13 @@ n1 ansible_ssh_host=172.31.88.1
 n2 ansible_ssh_host=172.31.88.2
 n3 ansible_ssh_host=172.31.88.3
 n4 ansible_ssh_host=172.31.88.4
+n5 ansible_ssh_host=172.31.88.5
+n6 ansible_ssh_host=172.31.88.6
+n7 ansible_ssh_host=172.31.88.7
+n8 ansible_ssh_host=172.31.88.8
+n9 ansible_ssh_host=172.31.88.9
+n10 ansible_ssh_host=172.31.88.10
+
 
 
 

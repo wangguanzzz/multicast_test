@@ -15,7 +15,16 @@ n7 ansible_ssh_host=172.31.88.7
 n8 ansible_ssh_host=172.31.88.8
 n9 ansible_ssh_host=172.31.88.9
 n10 ansible_ssh_host=172.31.88.10
-
+n11 ansible_ssh_host=172.31.88.11
+n12 ansible_ssh_host=172.31.88.12
+n13 ansible_ssh_host=172.31.88.13
+n14 ansible_ssh_host=172.31.88.14
+n15 ansible_ssh_host=172.31.88.15
+n16 ansible_ssh_host=172.31.88.16
+n17 ansible_ssh_host=172.31.88.17
+n18 ansible_ssh_host=172.31.88.18
+n19 ansible_ssh_host=172.31.88.19
+n20 ansible_ssh_host=172.31.88.20
 
 
 
@@ -26,9 +35,9 @@ n0  eth_ip=172.31.88.0
 
 [receiver]
 n1  eth_ip=172.31.88.1
-n2  eth_ip=172.31.88.2
+n12  eth_ip=172.31.88.2
 n3  eth_ip=172.31.88.3
-n4  eth_ip=172.31.88.4
+n14  eth_ip=172.31.88.4
 
 
 

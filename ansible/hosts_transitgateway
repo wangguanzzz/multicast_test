@@ -35,6 +35,16 @@ n27 ansible_ssh_host=172.31.88.27
 n28 ansible_ssh_host=172.31.88.28
 n29 ansible_ssh_host=172.31.88.29
 n30 ansible_ssh_host=172.31.88.30
+n31 ansible_ssh_host=172.31.88.31
+n32 ansible_ssh_host=172.31.88.32
+n33 ansible_ssh_host=172.31.88.33
+n34 ansible_ssh_host=172.31.88.34
+n35 ansible_ssh_host=172.31.88.35
+n36 ansible_ssh_host=172.31.88.36
+n37 ansible_ssh_host=172.31.88.37
+n38 ansible_ssh_host=172.31.88.38
+n39 ansible_ssh_host=172.31.88.39
+n40 ansible_ssh_host=172.31.88.40
 
 
 
